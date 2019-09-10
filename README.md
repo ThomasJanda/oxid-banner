@@ -11,6 +11,8 @@ row/column will use for sorting.
 
 Module was created for Oxid 6.x, "Wave" Theme.
 
+![](settings.png)
+
 ## Install
 
 1. Copy files into following directory
