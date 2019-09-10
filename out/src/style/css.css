@@ -1,0 +1,15 @@
+.rs-banner-row
+{
+    margin-left:-22px !important;
+    margin-right:-22px !important;
+    margin-bottom:15px;
+}
+.rs-banner-cell
+{
+    padding:0px 7px !important;
+    overflow:hidden;
+}
+.rs-banner-image
+{
+    max-width:100%;
+}

@@ -1,0 +1,1 @@
+[{include file="rs/banner/views/tpl/widget/promoslider__dd_widget_promoslider.tpl"}]
