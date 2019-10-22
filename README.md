@@ -9,6 +9,8 @@ The system try to display the banner at that position. It try
 to fill from the top down, from the left to the right. The 
 row/column will use for sorting. 
 
+![](shop1.png)
+
 Module was created for Oxid 6.x, "Wave" Theme.
 
 ![](settings.png)
