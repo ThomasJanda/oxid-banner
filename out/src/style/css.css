@@ -13,3 +13,8 @@
 {
     max-width:100%;
 }
+.rs-banner-nivoslider
+{
+    margin: 0; 
+    box-shadow: none;
+}

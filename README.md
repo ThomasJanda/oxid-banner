@@ -9,6 +9,14 @@ The system try to display the banner at that position. It try
 to fill from the top down, from the left to the right. The 
 row/column will use for sorting. 
 
+If the system detect more then one banner on the same place, the system display 
+a slider (nivo-slider) to display the information there at the same place.
+
+*Used third party modules:*
+
+    https://github.com/Codeinwp/Nivo-Slider-jQuery
+    https://docs.themeisle.com/article/487-nivo-slider-settings
+
 ![](shop1.png)
 
 Module was created for Oxid 6.x, "Wave" Theme.

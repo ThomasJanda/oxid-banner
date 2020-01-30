@@ -24,7 +24,7 @@ class StartController extends StartController_parent
         $aList=[];
         foreach($aBanners as $oBanner)
         {
-            $aList[$oBanner->oxactions__rsrow->value][]=$oBanner;
+            $aList[$oBanner->oxactions__rsrow->value][$oBanner->oxactions__rscol->value][]=$oBanner;
         }
 
         return $aList;
