@@ -13,8 +13,10 @@ $aModule = array(
     'extend'           => array(
         \OxidEsales\Eshop\Application\Controller\Admin\ActionsMain::class => rs\banner\Application\Controller\Admin\ActionsMain::class,
         \OxidEsales\Eshop\Application\Controller\StartController::class => rs\banner\Application\Controller\StartController::class,
+        \OxidEsales\Eshop\Application\Controller\ContentController::class => rs\banner\Application\Controller\ContentController::class,
         \OxidEsales\Eshop\Application\Controller\ArticleListController::class => rs\banner\Application\Controller\ArticleListController::class,
         \OxidEsales\Eshop\Application\Model\ActionList::class => rs\banner\Application\Model\ActionList::class,
+        \OxidEsales\Eshop\Application\Model\ContentList::class => rs\banner\Application\Model\ContentList::class,
     ),
     'controllers' => array(
     ),

@@ -12,8 +12,8 @@ row/column will use for sorting.
 If the system detect more then one banner on the same place, the system display 
 a slider (nivo-slider) to display the information there at the same place.
 
-You can select a categorie where the system should display the banner. If no categorie
-selected, the banner will display on the start page.
+You can select a categorie or/and a content page where the system should display the banner. 
+If no categorie/content page selected, the banner will display on the start page.
 
 *Used third party modules:*
 
@@ -65,6 +65,13 @@ Module was created for Oxid 6.x, "Wave" Theme.
         ALTER TABLE `oxactions` ADD `f_oxcategories` CHAR(32) 
         CHARACTER SET latin1 COLLATE latin1_general_ci NULL DEFAULT NULL, 
         ADD INDEX `f_oxcategories` (`f_oxcategories`); 
+
+        ALTER TABLE `oxactions` ADD `f_oxcontents` CHAR(32) 
+        CHARACTER SET latin1 COLLATE latin1_general_ci NULL DEFAULT NULL, 
+        ADD INDEX `f_oxcontents` (`f_oxcontents`); 
+
+        ALTER TABLE `oxactions` ADD `rsnot_startpage` TINYINT(1) NOT NULL DEFAULT '0'; 
     
-6. Update views
+6. Update views. Clear DB-, Template-, Language-Cache files.
+ 
 7. Enable module in the oxid admin area, Extensions => Modules

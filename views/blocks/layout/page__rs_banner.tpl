@@ -1,6 +1,6 @@
-[{if $oView->getClassName()=='start' && $oView->getBanners() && !empty($oView->getBanners())}]
-    [{include file="widget/promoslider.tpl"}]
-[{else $oView->getClassName()=='alist' && $oView->getBanners() && !empty($oView->getBanners())}]
-    [{include file="widget/promoslider.tpl"}]
+[{if $oView->getClassName()=='start' || $oView->getClassName()=="alist" || $oView->getClassName()=="content"}]
+    [{if $oView->getBanners() && !empty($oView->getBanners())}]
+        [{include file="widget/promoslider.tpl"}]
+    [{/if}]
 [{/if}]
 

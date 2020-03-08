@@ -10,6 +10,7 @@ class ActionsMain extends ActionsMain_parent {
         $sType="cat";
         $sValue="";
         $this->_aViewData["cattree"] = $this->getCategoryList($sType, $sValue);
+        $this->_aViewData["contentlist"] = $this->getContentList();
         return parent::render();
     }
     public function getCategoryList($sType, $sValue)
@@ -28,5 +29,12 @@ class ActionsMain extends ActionsMain_parent {
 
         return $oCatTree;
     }
-    
+    public function getContentList()
+    {
+        /** @var \OxidEsales\Eshop\Application\Model\CategoryList $oCatTree parent category tree */
+        $oCatTree = oxNew(\OxidEsales\Eshop\Application\Model\ContentList::class);
+        $oCatTree->rs_banner_getListAll();
+
+        return $oCatTree;
+    }
 }

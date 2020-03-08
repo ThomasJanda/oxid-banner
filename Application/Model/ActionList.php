@@ -21,14 +21,20 @@ class ActionList extends ActionList_parent
         $this->rs_banner_loadBanners("");
     }
     
-    public function rs_banner_loadBanners($f_oxcategories="")
+    public function rs_banner_loadBanners($f_oxcategories="", $f_oxcontents="")
     {
         $oBaseObject = $this->getBaseObject();
         $oViewName = $oBaseObject->getViewName();
         $sQ = "select * from {$oViewName} where oxtype=3 and " . $oBaseObject->getSqlActiveSnippet()
             . " and oxshopid='" . $this->getConfig()->getShopId() . "' " . $this->_getUserGroupFilter();
-        $sQ.= " and f_oxcategories".($f_oxcategories!=""?"='".$f_oxcategories."'":' is null')." ";
+        if($f_oxcategories!="")
+            $sQ.= " and f_oxcategories='".$f_oxcategories."' ";
+        elseif($f_oxcontents!="")
+            $sQ.= " and f_oxcontents='".$f_oxcontents."' ";
+        else
+            $sQ.=" and rsnot_startpage=0 ";
         $sQ.= " order by rsrow, rscol";
+
         $this->selectString($sQ);
     }
 }
