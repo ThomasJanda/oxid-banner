@@ -33,3 +33,19 @@
         </select>
     </td>
 </tr>
+
+<tr>
+    <td class="text">
+        <b>Anzeigen in Kategorie:</b>
+    </td>
+    <td class="text" colspan="2">
+        <select name="editval[oxactions__f_oxcategories]" [{$readonly}]>
+            <option value=""></option>
+                [{foreach from=$cattree item=pcat}]
+                    <option value="[{$pcat->oxcategories__oxid->value}]" 
+                            [{if $edit->oxactions__f_oxcategories->value==$pcat->oxcategories__oxid->value}] selected [{/if}]
+                            >[{$pcat->oxcategories__oxtitle->getRawValue()|oxtruncate:40:"..":true}]</option>
+                [{/foreach}]
+        </select>
+    </td>
+</tr>

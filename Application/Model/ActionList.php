@@ -18,11 +18,17 @@ class ActionList extends ActionList_parent
     public function loadBanners()
     {
         parent::loadBanners();
+        $this->rs_banner_loadBanners("");
+    }
+    
+    public function rs_banner_loadBanners($f_oxcategories="")
+    {
         $oBaseObject = $this->getBaseObject();
         $oViewName = $oBaseObject->getViewName();
         $sQ = "select * from {$oViewName} where oxtype=3 and " . $oBaseObject->getSqlActiveSnippet()
-            . " and oxshopid='" . $this->getConfig()->getShopId() . "' " . $this->_getUserGroupFilter()
-            . " order by rsrow, rscol";
+            . " and oxshopid='" . $this->getConfig()->getShopId() . "' " . $this->_getUserGroupFilter();
+        $sQ.= " and f_oxcategories".($f_oxcategories!=""?"='".$f_oxcategories."'":' is null')." ";
+        $sQ.= " order by rsrow, rscol";
         $this->selectString($sQ);
     }
 }

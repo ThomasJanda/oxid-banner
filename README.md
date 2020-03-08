@@ -12,6 +12,9 @@ row/column will use for sorting.
 If the system detect more then one banner on the same place, the system display 
 a slider (nivo-slider) to display the information there at the same place.
 
+You can select a categorie where the system should display the banner. If no categorie
+selected, the banner will display on the start page.
+
 *Used third party modules:*
 
     https://github.com/Codeinwp/Nivo-Slider-jQuery
@@ -41,10 +44,27 @@ Module was created for Oxid 6.x, "Wave" Theme.
 
         composer dump-autoload
 
-4. Execute in Database
+4. Template changes
+
+        File: /source/Application/views/wave/tpl/layout/page.tpl add new block "rs_banner"
+
+            <div class="[{if $blFullwidth}]container-fluid[{else}]container[{/if}]">
+                <div class="row">
+                [{block name="rs_banner"}]
+                [{if $oView->getClassName()=='start' && $oView->getBanners() && !empty($oView->getBanners())}]
+                    [{include file="widget/promoslider.tpl"}]
+                [{/if}]
+                [{/block}]
+            </div>
+
+5. Execute in Database
 
         ALTER TABLE `oxactions` ADD `rscol` INT(11) NOT NULL DEFAULT '0',
         ADD `rsrow` INT(11) NOT NULL DEFAULT '0';
+
+        ALTER TABLE `oxactions` ADD `f_oxcategories` CHAR(32) 
+        CHARACTER SET latin1 COLLATE latin1_general_ci NULL DEFAULT NULL, 
+        ADD INDEX `f_oxcategories` (`f_oxcategories`); 
     
-5. Update views
-6. Enable module in the oxid admin area, Extensions => Modules
+6. Update views
+7. Enable module in the oxid admin area, Extensions => Modules
