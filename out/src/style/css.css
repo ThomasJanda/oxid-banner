@@ -18,3 +18,36 @@
     margin: 0; 
     box-shadow: none;
 }
+
+.rs-banner-cell .flex-caption
+{
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 5px 10px;
+    margin: 0;
+    width: calc(100% - 14px);
+}
+.rs-banner-cell .flex-caption .title,
+.rs-banner-cell .nivo-caption .title
+{
+    font-weight:bold;
+}
+.rs-banner-cell .flex-caption a,
+.rs-banner-cell .flex-caption a:hover,
+.rs-banner-cell .nivo-caption a,
+.rs-banner-cell .nivo-caption a:hover
+{
+    color:white;
+    text-decoration: none;
+    border-bottom:0 !important;
+}
+
+
+.rs-banner-cell .rs-banner-caption-test
+{
+    width:auto;
+    margin:20px;
+}

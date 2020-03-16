@@ -73,3 +73,37 @@
         <input type="checkbox" name="editval[oxactions__rsnot_startpage]" value="1" [{if $edit->oxactions__rsnot_startpage->value==1}] checked [{/if}]>
     </td>
 </tr>
+<tr>
+    <td class="text">
+        <b>Alternativen Titel anzeigen:</b>
+    </td>
+    <td class="text" colspan="2">
+        <input type="hidden" name="editval[oxactions__rsshow_alternative_title]" value="0">
+        <input type="checkbox" name="editval[oxactions__rsshow_alternative_title]" value="1" [{if $edit->oxactions__rsshow_alternative_title->value==1}] checked [{/if}]>
+    </td>
+</tr>
+<tr>
+    <td class="text">
+        <b>Alternativer Titel (max. 250 Zeichen)</b>
+    </td>
+    <td class="text" colspan="2">
+        <input type="textbox" name="editval[oxactions__rsalternative_title]" value="[{$edit->oxactions__rsalternative_title->value}]">
+    </td>
+</tr>
+<tr>
+    <td class="text">
+        <b>Alternative Kurzbeschreibung:</b>
+    </td>
+    <td class="text" colspan="2">
+        <input type="hidden" name="editval[oxactions__rsshow_alternative_short]" value="0">
+        <input type="checkbox" name="editval[oxactions__rsshow_alternative_short]" value="1" [{if $edit->oxactions__rsshow_alternative_short->value==1}] checked [{/if}]>
+    </td>
+</tr>
+<tr>
+    <td class="text">
+        <b>Alternative Kurzbeschreibung (max. 250 Zeichen)</b>
+    </td>
+    <td class="text" colspan="2">
+        <textarea name="editval[oxactions__rsalternative_short]">[{$edit->oxactions__rsalternative_short->value}]</textarea>
+    </td>
+</tr>

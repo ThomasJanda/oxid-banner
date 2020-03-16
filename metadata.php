@@ -43,5 +43,44 @@ $aModule = array(
 
     ),
     'settings'    => array(
+
+        array(
+            'group' => 'rs-banner_nivo_slider',
+            'name'  => 'rs-banner_nivo_slider_effect',
+            'type' => 'select',   
+            'value' => 'random', 
+            'position' => 0,
+            'constraints' => 'random|sliceDown|sliceDownLeft|sliceUp|sliceUpLeft|sliceUpDown|sliceUpDownLeft|fold|fade|slideInRight|slideInLeft|boxRandom|boxRain|boxRainReverse|boxRainGrow|boxRainGrowReverse',
+        ),
+        array(
+            'group' => 'rs-banner_nivo_slider',
+            'name'  => 'rs-banner_nivo_slider_animSpeed',
+            'type'  => 'str',
+            'value' => '500',
+        ),
+        array(
+            'group' => 'rs-banner_nivo_slider',
+            'name'  => 'rs-banner_nivo_slider_pauseTime',
+            'type'  => 'str',
+            'value' => '3000',
+        ),
+        array(
+            'group' => 'rs-banner_nivo_slider',
+            'name'  => 'rs-banner_nivo_slider_directionNav',
+            'type'  => 'bool',
+            'value' => true,
+        ),
+        array(
+            'group' => 'rs-banner_nivo_slider',
+            'name'  => 'rs-banner_nivo_slider_controlNav',
+            'type'  => 'bool',
+            'value' => false,
+        ),
+        array(
+            'group' => 'rs-banner_nivo_slider',
+            'name'  => 'rs-banner_nivo_slider_captionClass',
+            'type'  => 'str',
+            'value' => '',
+        ),
     ),
 );
