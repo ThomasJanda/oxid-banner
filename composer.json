@@ -2,6 +2,7 @@
   "name": "rs/banner",
   "description": "Banner",
   "type": "oxideshop-module",
+  "minimum-stability": "stable",
   "keywords": ["oxid", "modules", "eShop"],
   "homepage": "https://www.reisacher-software.de",
   "license": [
