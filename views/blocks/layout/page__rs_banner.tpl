@@ -1,6 +1,6 @@
-[{if $oView->getClassName()=='start' || $oView->getClassName()=="alist" || $oView->getClassName()=="content"}]
+[{if $oView->getClassName()=='start'}]
     [{if $oView->getBanners() && !empty($oView->getBanners())}]
         [{include file="widget/promoslider.tpl"}]
-        [{assign var=blHideBreadcrumb value=true}]
+        [{*assign var=blHideBreadcrumb value=true*}]
     [{/if}]
 [{/if}]

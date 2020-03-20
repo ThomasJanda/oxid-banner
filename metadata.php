@@ -40,7 +40,16 @@ $aModule = array(
             'block'=>'rs_banner',
             'file'=>'/views/blocks/layout/page__rs_banner.tpl'
         ),
-
+        array(
+            'template' => 'page/info/content.tpl',
+            'block'=>'rs_banner',
+            'file'=>'/views/blocks/page/info/content__rs_banner.tpl'
+        ),
+        array(
+            'template' => 'page/list/list.tpl',
+            'block'=>'rs_banner',
+            'file'=>'/views/blocks/page/list/list__rs_banner.tpl'
+        ),
     ),
     'settings'    => array(
 

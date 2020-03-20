@@ -64,6 +64,36 @@ Module was created for Oxid 6.x, "Wave" Theme.
                 [{/block}]
             </div>
 
+
+        File: /var/www/html/oxid6_1_dev/source/Application/views/wave/tpl/page/info/content.tpl
+
+            <h1 class="page-header">[{$template_title}]</h1>
+
+            [{block name="rs_banner"}][{/block}]
+
+            <article class="cmsContent">
+                [{$oView->getParsedContent()}]
+            </article>
+
+
+        File: /var/www/html/oxid6_1_dev/source/Application/views/wave/tpl/page/list/list.tpl
+
+                        <a class="rss" id="rssActiveCategory" aria-label="RSS Current Category" href="[{$rsslinks.activeCategory.link}]" title="[{$rsslinks.activeCategory.title}]" target="_blank">
+                            <i class="fas fa-rss"></i>
+                        </a>
+                    [{/if}]
+                </h1>
+            </div>
+
+            [{block name="rs_banner"}][{/block}]
+
+            [{assign var="oPageNavigation" value=$oView->getPageNavigation()}]
+            [{if $actCategory && $actCategory->getShortDescription() && $oPageNavigation->actPage == 1}]
+                <p id="catDescLocator" class="categoryDescription">
+                    <em>[{$actCategory->oxcategories__oxdesc->rawValue}]</em>
+                </p>
+            [{/if}]
+
 5. Execute in Database
 
         ALTER TABLE `oxactions` ADD `rscol` INT(11) NOT NULL DEFAULT '0',
