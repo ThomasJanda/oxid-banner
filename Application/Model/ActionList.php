@@ -33,7 +33,7 @@ class ActionList extends ActionList_parent
             $sQ.= " and f_oxcontents='".$f_oxcontents."' ";
         else
             $sQ.=" and rsnot_startpage=0 ";
-        $sQ.= " order by rsrow, rscol";
+        $sQ.= " order by rsrow, rscol, oxsort";
 
         $this->selectString($sQ);
     }
