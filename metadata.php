@@ -15,6 +15,7 @@ $aModule = array(
         \OxidEsales\Eshop\Application\Controller\StartController::class => rs\banner\Application\Controller\StartController::class,
         \OxidEsales\Eshop\Application\Controller\ContentController::class => rs\banner\Application\Controller\ContentController::class,
         \OxidEsales\Eshop\Application\Controller\ArticleListController::class => rs\banner\Application\Controller\ArticleListController::class,
+        \OxidEsales\Eshop\Application\Controller\ManufacturerListController::class => rs\banner\Application\Controller\ManufacturerListController::class,
         \OxidEsales\Eshop\Application\Model\ActionList::class => rs\banner\Application\Model\ActionList::class,
         \OxidEsales\Eshop\Application\Model\ContentList::class => rs\banner\Application\Model\ContentList::class,
     ),
