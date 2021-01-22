@@ -3,12 +3,13 @@
 namespace rs\banner\Application\Controller\Admin;
 
 
-class ActionsMain extends ActionsMain_parent {
+class ActionsMain extends ActionsMain_parent
+{
 
-    public function render() 
+    public function render()
     {
-        $sType="cat";
-        $sValue="";
+        $sType = "cat";
+        $sValue = "";
         $this->_aViewData["cattree"] = $this->getCategoryList($sType, $sValue);
         $this->_aViewData["contentlist"] = $this->getContentList();
         return parent::render();

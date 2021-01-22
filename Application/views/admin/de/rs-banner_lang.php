@@ -27,5 +27,5 @@ $aLang = array(
     'SHOP_MODULE_rs-banner_nivo_slider_directionNav' => 'Direction navigation?',
     'SHOP_MODULE_rs-banner_nivo_slider_controlNav' => 'Site navigation?',
     'SHOP_MODULE_rs-banner_nivo_slider_captionClass' => 'Additional caption css class',
-    
+
 );

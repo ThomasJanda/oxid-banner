@@ -19,37 +19,36 @@ $aModule = array(
         \OxidEsales\Eshop\Application\Model\ActionList::class => rs\banner\Application\Model\ActionList::class,
         \OxidEsales\Eshop\Application\Model\ContentList::class => rs\banner\Application\Model\ContentList::class,
     ),
-    'controllers' => array(
-    ),
+    'controllers' => array(),
     'templates' => array(
         'rs/banner/views/tpl/widget/promoslider__dd_widget_promoslider.tpl' => 'rs/banner/views/tpl/widget/promoslider__dd_widget_promoslider.tpl'
     ),
     'blocks' => array(
         array(
             'template' => 'widget/promoslider.tpl',
-            'block'=>'dd_widget_promoslider',
-            'file'=>'/views/blocks/widget/promoslider__dd_widget_promoslider.tpl'
+            'block' => 'dd_widget_promoslider',
+            'file' => '/views/blocks/widget/promoslider__dd_widget_promoslider.tpl'
         ),
         array(
             'template' => 'actions_main.tpl',
-            'block'=>'admin_actions_main_product',
-            'file'=>'/views/admin/blocks/actions_main__admin_actions_main_product.tpl'
+            'block' => 'admin_actions_main_product',
+            'file' => '/views/admin/blocks/actions_main__admin_actions_main_product.tpl'
         ),
-        
+
         array(
             'template' => 'layout/page.tpl',
-            'block'=>'rs_banner',
-            'file'=>'/views/blocks/layout/page__rs_banner.tpl'
+            'block' => 'rs_banner',
+            'file' => '/views/blocks/layout/page__rs_banner.tpl'
         ),
         array(
             'template' => 'page/info/content.tpl',
-            'block'=>'rs_banner',
-            'file'=>'/views/blocks/page/info/content__rs_banner.tpl'
+            'block' => 'rs_banner',
+            'file' => '/views/blocks/page/info/content__rs_banner.tpl'
         ),
         array(
             'template' => 'page/list/list.tpl',
-            'block'=>'rs_banner',
-            'file'=>'/views/blocks/page/list/list__rs_banner.tpl'
+            'block' => 'rs_banner',
+            'file' => '/views/blocks/page/list/list__rs_banner.tpl'
         ),
     ),
     'settings'    => array(
@@ -57,8 +56,8 @@ $aModule = array(
         array(
             'group' => 'rs-banner_nivo_slider',
             'name'  => 'rs-banner_nivo_slider_effect',
-            'type' => 'select',   
-            'value' => 'random', 
+            'type' => 'select',
+            'value' => 'random',
             'position' => 0,
             'constraints' => 'random|sliceDown|sliceDownLeft|sliceUp|sliceUpLeft|sliceUpDown|sliceUpDownLeft|fold|fade|slideInRight|slideInLeft|boxRandom|boxRain|boxRainReverse|boxRainGrow|boxRainGrowReverse',
         ),
@@ -93,4 +92,8 @@ $aModule = array(
             'value' => '',
         ),
     ),
+    'events'      => [
+        'onActivate'   => '\rs\banner\Core\install\event::onActivate',
+        'onDeactivate' => '\rs\banner\Core\install\event::onDeactivate',
+    ],
 );

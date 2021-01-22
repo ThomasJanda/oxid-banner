@@ -21,10 +21,9 @@ class StartController extends StartController_parent
     {
         $aBanners = parent::getBanners();
 
-        $aList=[];
-        foreach($aBanners as $oBanner)
-        {
-            $aList[$oBanner->oxactions__rsrow->value][$oBanner->oxactions__rscol->value][]=$oBanner;
+        $aList = [];
+        foreach ($aBanners as $oBanner) {
+            $aList[$oBanner->oxactions__rsrow->value][$oBanner->oxactions__rscol->value][] = $oBanner;
         }
 
         return $aList;

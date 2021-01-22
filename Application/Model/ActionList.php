@@ -20,20 +20,21 @@ class ActionList extends ActionList_parent
         parent::loadBanners();
         $this->rs_banner_loadBanners("");
     }
-    
-    public function rs_banner_loadBanners($f_oxcategories="", $f_oxcontents="")
+
+    public function rs_banner_loadBanners($f_oxcategories = "", $f_oxcontents = "")
     {
         $oBaseObject = $this->getBaseObject();
         $oViewName = $oBaseObject->getViewName();
+        $oConfig = \OxidEsales\Eshop\Core\Registry::getConfig();
         $sQ = "select * from {$oViewName} where oxtype=3 and " . $oBaseObject->getSqlActiveSnippet()
-            . " and oxshopid='" . $this->getConfig()->getShopId() . "' " . $this->_getUserGroupFilter();
-        if($f_oxcategories!="")
-            $sQ.= " and f_oxcategories='".$f_oxcategories."' ";
-        elseif($f_oxcontents!="")
-            $sQ.= " and f_oxcontents='".$f_oxcontents."' ";
+            . " and oxshopid='" . $oConfig->getShopId() . "' " . $this->_getUserGroupFilter();
+        if ($f_oxcategories != "")
+            $sQ .= " and f_oxcategories='" . $f_oxcategories . "' ";
+        elseif ($f_oxcontents != "")
+            $sQ .= " and f_oxcontents='" . $f_oxcontents . "' ";
         else
-            $sQ.=" and rsnot_startpage=0 ";
-        $sQ.= " order by rsrow, rscol, oxsort";
+            $sQ .= " and rsnot_startpage=0 ";
+        $sQ .= " order by rsrow, rscol, oxsort";
 
         $this->selectString($sQ);
     }

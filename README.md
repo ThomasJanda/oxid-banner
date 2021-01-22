@@ -15,41 +15,37 @@ a slider (nivo-slider) to display the information there at the same place.
 You can select a categorie or/and a content page where the system should display the banner. 
 If no categorie/content page selected, the banner will display on the start page.
 
-New features:
+Module was created for Oxid 6.2, "Wave" Theme.
 
-    - alternative title
-    - alternative description
-    - additional css class for banner caption
-    - change default nivo slider settings
+*New features:*
+
+    * alternative title
+    * alternative description
+    * additional css class for banner caption
+    * change default nivo slider settings
 
 *Used third party modules:*
 
     https://github.com/Codeinwp/Nivo-Slider-jQuery
     https://docs.themeisle.com/article/487-nivo-slider-settings
 
+    
 ![](shop1.png)
-
-Module was created for Oxid 6.x, "Wave" Theme.
 
 ![](settings.png)
 
+
+
 ## Install
 
-1. Copy files into following directory
+1. Open the teminal in you oxid root directory (the "source" folder is a subfolder there and a "composer.json" shoud be there)
 
-        source/modules/rs/banner
-        
-2. Add to composer.json at shop root
-  
-        "autoload": {
-            "psr-4": {
-                "rs\\banner\\": "./source/modules/rs/banner"
-            }
-        },
+2. Execute following command within the terminal
 
-3. Refresh autoloader files with composer in the oxid root directory.
+        composer config repositories.rs/banner git https://github.com ThomasJanda/oxid-banner/
+        composer require rs/banner:dev-master --update-no-dev --ignore-platform-reqs
 
-        composer dump-autoload
+3. The installation script will now ask some question if you like to override existing files. Type always "n" for "No" and hit enter for confirmation. 
 
 4. Template changes
 
@@ -94,41 +90,4 @@ Module was created for Oxid 6.x, "Wave" Theme.
                 </p>
             [{/if}]
 
-5. Execute in Database
-
-        ALTER TABLE `oxactions` ADD `rscol` INT(11) NOT NULL DEFAULT '0',
-        ADD `rsrow` INT(11) NOT NULL DEFAULT '0';
-
-        ALTER TABLE `oxactions` ADD `f_oxcategories` CHAR(32) 
-        CHARACTER SET latin1 COLLATE latin1_general_ci NULL DEFAULT NULL, 
-        ADD INDEX `f_oxcategories` (`f_oxcategories`); 
-
-        ALTER TABLE `oxactions` ADD `f_oxcontents` CHAR(32) 
-        CHARACTER SET latin1 COLLATE latin1_general_ci NULL DEFAULT NULL, 
-        ADD INDEX `f_oxcontents` (`f_oxcontents`); 
-
-        ALTER TABLE `oxactions` ADD `rsnot_startpage` TINYINT(1) NOT NULL DEFAULT '0'; 
-
-        ALTER TABLE `oxactions` ADD `rsshow_alternative_title` TINYINT(1) NOT NULL DEFAULT '0'; 
-        ALTER TABLE `oxactions` ADD `rsshow_alternative_title_1` TINYINT(1) NOT NULL DEFAULT '0'; 
-        ALTER TABLE `oxactions` ADD `rsshow_alternative_title_2` TINYINT(1) NOT NULL DEFAULT '0'; 
-        ALTER TABLE `oxactions` ADD `rsshow_alternative_title_3` TINYINT(1) NOT NULL DEFAULT '0'; 
-
-        ALTER TABLE `oxactions` ADD `oxactions__rsalternative_title` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''; 
-        ALTER TABLE `oxactions` ADD `oxactions__rsalternative_title_1` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''; 
-        ALTER TABLE `oxactions` ADD `oxactions__rsalternative_title_2` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''; 
-        ALTER TABLE `oxactions` ADD `oxactions__rsalternative_title_3` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''; 
-
-        ALTER TABLE `oxactions` ADD `rsshow_alternative_short` TINYINT(1) NOT NULL DEFAULT '0'; 
-        ALTER TABLE `oxactions` ADD `rsshow_alternative_short_1` TINYINT(1) NOT NULL DEFAULT '0'; 
-        ALTER TABLE `oxactions` ADD `rsshow_alternative_short_2` TINYINT(1) NOT NULL DEFAULT '0'; 
-        ALTER TABLE `oxactions` ADD `rsshow_alternative_short_3` TINYINT(1) NOT NULL DEFAULT '0'; 
-
-        ALTER TABLE `oxactions` ADD `oxactions__rsalternative_short` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''; 
-        ALTER TABLE `oxactions` ADD `oxactions__rsalternative_short_1` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''; 
-        ALTER TABLE `oxactions` ADD `oxactions__rsalternative_short_2` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''; 
-        ALTER TABLE `oxactions` ADD `oxactions__rsalternative_short_3` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''; 
-    
-6. Update views. Clear DB-, Template-, Language-Cache files.
- 
-7. Enable module in the oxid admin area, Extensions => Modules
+5. Open the shop admin and enable module in the oxid admin area, Extensions => Modules
