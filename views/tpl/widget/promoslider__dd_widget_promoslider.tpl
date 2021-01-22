@@ -112,9 +112,9 @@
     [{/foreach}]
     
     [{if $bStartNivoSlider}]
-        [{oxstyle include=$oViewConf->getModuleUrl("rs_banner", "out/src/Nivo-Slider-jQuery-master/themes/default/default.css")}]
-        [{oxstyle include=$oViewConf->getModuleUrl("rs_banner", "out/src/Nivo-Slider-jQuery-master/nivo-slider.css")}]
-        [{oxscript include=$oViewConf->getModuleUrl("rs_banner", "out/src/Nivo-Slider-jQuery-master/jquery.nivo.slider.js")}]
+        [{oxstyle include=$oViewConf->getModuleUrl("rs_banner", "out/src/Nivo-Slider/themes/default/default.css")}]
+        [{oxstyle include=$oViewConf->getModuleUrl("rs_banner", "out/src/Nivo-Slider/nivo-slider.css")}]
+        [{oxscript include=$oViewConf->getModuleUrl("rs_banner", "out/src/Nivo-Slider/jquery.nivo.slider.js")}]
         [{capture name="rsscript"}]
             [{capture}]<script>[{/capture}]
                 [{* https://docs.themeisle.com/article/487-nivo-slider-settings *}]
